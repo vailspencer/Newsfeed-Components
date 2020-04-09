@@ -135,7 +135,7 @@ const articleBuilder = (
   btnArticle.classList.add('expandButton');
 
 
-
+  // Add Content 
   articleTitle.textContent = title;
   articleDate.textContent = date;
   firstPArticle.textContent = firstParagraph;
@@ -143,6 +143,7 @@ const articleBuilder = (
   thirdPArticle.textContent = thirdParagraph;
   btnArticle.textContent = 'Expand';
 
+  // Button Event listener
   btnArticle.addEventListener('click', () => {
     article.classList.toggle('article-open')
   });

@@ -9,10 +9,12 @@ let menuItems = [
   'Log Out'
 ];
 
+// Create Menu
 const buildMenu = menuItems => {
   const menu = document.createElement('div');
   const ul = document.createElement('ul');
 
+  //Text for menu links
   menuItems.forEach(el => {
     let item = document.createElement('li');
     item.textContent = el;
@@ -23,16 +25,9 @@ const buildMenu = menuItems => {
 
   menu.appendChild(ul);
 
+  // Menu Toggle Button
   const menuBtn = document.querySelector('.menu-button');
   menuBtn.addEventListener('click', () => {
-    gsap.from('.menu', { duration: 0.2, opacity: 0, x: '-300' });
-
-    menu.classList.contains('menu--open');
-    gsap.from('li', {
-      duration: 2,
-      opacity: 100,
-      rotation: '360'
-    });
     menu.classList.toggle('menu--open');
   });
 
@@ -42,6 +37,7 @@ const buildMenu = menuItems => {
 const header = document.querySelector('.header');
 
 header.prepend(buildMenu(menuItems));
+// console.log(menu);
 
 
 /* 
